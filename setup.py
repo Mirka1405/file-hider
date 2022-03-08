@@ -61,7 +61,7 @@ else:
 
 
 os.makedirs(dirs)
-printtext("step2")
+printtext("step3.5")
 with open(sdir+"passchanger.py", "w") as f:
     f.write(r"""
 from ctypes import *
@@ -192,6 +192,7 @@ print(main())
 sleep(5)
 
     """)
+printtext("step2")
 with open(sdir+"show.py", "w") as f:
     f.write(r"""
 from ctypes import *
