@@ -118,6 +118,9 @@ from time import sleep
 def main():
     p = dirname(realpath(__file__))
     a = ADS(p+"\\hidden folder\\contents.txt")
+    if not "streampass.txt" in a.streams:
+        a.add_stream_from_string("streampass",input("No password found! Set new password: ").encode("utf-8"))
+        return "Success!"
     if input("Password: ") != a.get_stream_content("streampass.txt").decode("utf-8"):   return "Wrong password!"
     a.delete_stream("streampass.txt")
     a.add_stream_from_string("streampass",input("New password: ").encode("utf-8"))
